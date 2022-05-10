@@ -2,3 +2,5 @@ node_modules
 playground
 .idea
 public/dist
+.env.test
+.env.development
