@@ -3,17 +3,17 @@ import { shallow } from "enzyme";
 import { EditExpensePage } from "../../components/EditExpensePage";
 import expenses from "../fixtures/expenses";
 
-let editExpense, removeExpense, history, wrapper;
+let editExpense, startRemoveExpense, history, wrapper;
 
 beforeEach(() => {
     editExpense = jest.fn();
-    removeExpense = jest.fn();
+    startRemoveExpense = jest.fn();
     history = { push: jest.fn() };
     wrapper = shallow(
         <EditExpensePage
             expense={expenses[2]}
             editExpense={editExpense}
-            removeExpense={removeExpense}
+            removeExpense={startRemoveExpense}
             history={history}
         />
     );
@@ -31,9 +31,9 @@ test('should handle editExpense', () => {
     expect(editExpense).toHaveBeenLastCalledWith(expense.id, expense);
 });
 
-test('should handle removeExpense', () => {
+test('should handle startRemoveExpense', () => {
     const expense = wrapper.find('ExpenseForm').prop('expense');
     wrapper.find('button').prop('onClick')();
     expect(history.push).toHaveBeenLastCalledWith('/');
-    expect(removeExpense).toHaveBeenLastCalledWith({ id: expense.id });
+    expect(startRemoveExpense).toHaveBeenLastCalledWith({ id: expense.id });
 });
