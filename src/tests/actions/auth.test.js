@@ -1,6 +1,6 @@
 import {login, logout} from "../../actions/auth";
 
-test('should generate login action object', () => {
+test('should generate button action object', () => {
     const uid = '123xyz';
     const action = login(uid);
     expect(action).toEqual({

@@ -1,6 +1,6 @@
 import authReducer from "../../reducers/auth";
 
-test('should set uid for login', () => {
+test('should set uid for button', () => {
     const action = {
         type: 'LOGIN',
         uid: '123abcxyz321'

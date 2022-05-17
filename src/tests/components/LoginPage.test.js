@@ -9,7 +9,7 @@ beforeEach(() => {
     wrapper = shallow(<LoginPage startLogin={startLogin}/>);
 });
 
-test('should render login page correctly', () => {
+test('should render button page correctly', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
